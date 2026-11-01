@@ -1,0 +1,1085 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "userId": "GP-ADMIN-01",
+      "fullName": "সুপার অ্যাডমিন (Admin)",
+      "username": "admin",
+      "email": "supportteambd@gmail.com",
+      "mobile": "01700000000",
+      "password": "admin123",
+      "balance": 50000,
+      "totalEarnings": 0,
+      "completedTasksCount": 0,
+      "pendingTasksCount": 0,
+      "referralCode": "GPADMIN",
+      "totalInvited": 0,
+      "totalSuccessfulReferrals": 0,
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-10-02T08:57:40.705Z",
+      "firebaseUid": "fb_uid_admin_supportteambd",
+      "emailVerified": true
+    },
+    {
+      "id": "usr_shakib",
+      "userId": "GP10021",
+      "fullName": "সাকিব আল হাসান",
+      "username": "shakib75",
+      "mobile": "01812345678",
+      "password": "password123",
+      "balance": 1190,
+      "totalEarnings": 1830,
+      "completedTasksCount": 6,
+      "pendingTasksCount": 0,
+      "referralCode": "GP75SKB",
+      "totalInvited": 3,
+      "totalSuccessfulReferrals": 2,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-10-17T08:57:40.705Z"
+    },
+    {
+      "id": "usr_rahim",
+      "userId": "GP10022",
+      "fullName": "আব্দুর রহিম",
+      "username": "rahim99",
+      "mobile": "01711223344",
+      "password": "password123",
+      "balance": 150,
+      "totalEarnings": 350,
+      "completedTasksCount": 3,
+      "pendingTasksCount": 0,
+      "referralCode": "GP99RHM",
+      "referredBy": "GP10021",
+      "totalInvited": 5,
+      "totalSuccessfulReferrals": 4,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-10-22T08:57:40.705Z"
+    },
+    {
+      "id": "usr_1793524675606",
+      "userId": "GP30966",
+      "fullName": "MD MUSTAFA KAMAL",
+      "username": "mdmustafa89",
+      "mobile": "01576996700",
+      "password": "Ssmmaa90",
+      "balance": 1070,
+      "totalEarnings": 1070,
+      "completedTasksCount": 0,
+      "pendingTasksCount": 0,
+      "referralCode": "GP495MDM",
+      "totalInvited": 0,
+      "totalSuccessfulReferrals": 0,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-11-01T09:17:55.606Z"
+    },
+    {
+      "id": "usr_1793526242590",
+      "userId": "GP26558",
+      "fullName": "রাকিবুল হাসান",
+      "username": "testuser_2588",
+      "mobile": "01711002588",
+      "password": "password123",
+      "balance": 20,
+      "totalEarnings": 20,
+      "completedTasksCount": 0,
+      "pendingTasksCount": 0,
+      "referralCode": "GP841TES",
+      "totalInvited": 0,
+      "totalSuccessfulReferrals": 0,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-11-01T09:44:02.590Z"
+    },
+    {
+      "id": "usr_1793526275112",
+      "userId": "GP97827",
+      "fullName": "রাকিবুল হাসান",
+      "username": "testuser_5111",
+      "mobile": "01711005111",
+      "password": "password123",
+      "balance": 45,
+      "totalEarnings": 45,
+      "completedTasksCount": 1,
+      "pendingTasksCount": 0,
+      "referralCode": "GP483TES",
+      "referredBy": "GP10021",
+      "totalInvited": 0,
+      "totalSuccessfulReferrals": 0,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-11-01T09:44:35.112Z"
+    },
+    {
+      "id": "usr_1793526312602",
+      "userId": "GP65607",
+      "fullName": "রাকিবুল হাসান",
+      "username": "user_2600",
+      "mobile": "01788002600",
+      "password": "password123",
+      "balance": 40,
+      "totalEarnings": 40,
+      "completedTasksCount": 1,
+      "pendingTasksCount": 0,
+      "referralCode": "GP704USE",
+      "referredBy": "GP10021",
+      "totalInvited": 0,
+      "totalSuccessfulReferrals": 0,
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-11-01T09:45:12.602Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1793526312553_a1ik",
+      "title": "অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন",
+      "shortDescription": "আমাদের টেলিগ্রাম চ্যানেলে জয়েন করে পেমেন্ট আপডেট পান",
+      "fullDescription": "নিচের লিংকে ক্লিক করে আমাদের অফিশিয়াল চ্যানেলে যুক্ত হোন",
+      "instructions": "১. লিংকে গিয়ে জয়েন করুন\n২. স্ক্রিনশট নিন\n৩. প্রমাণ সাবমিট করুন",
+      "category": "telegram",
+      "rewardAmount": 20,
+      "taskUrl": "https://t.me/gpwalletbd",
+      "proofMethod": "telegram",
+      "proofUrl": "t.me/gpwalletbd_support",
+      "iconName": "check-circle",
+      "isActive": true,
+      "totalCompleted": 1,
+      "createdAt": "2026-11-01T09:45:12.553Z"
+    },
+    {
+      "id": "task_1793526275100_26b3",
+      "title": "টেস্ট ফেসবুক ফলো টাস্ক",
+      "shortDescription": "আমাদের অফিশিয়াল পেজ ফলো ও লাইক করুন",
+      "fullDescription": "ফেসবুক পেজে গিয়ে ফলো বাটনে ক্লিক করুন এবং স্ক্রিনশট নিন",
+      "instructions": "১. লিংকে যান\n২. পেজ লাইক ও ফলো করুন\n৩. স্ক্রিনশট জমা দিন",
+      "category": "facebook",
+      "rewardAmount": 25,
+      "taskUrl": "facebook.com/gpwalletbd",
+      "proofMethod": "whatsapp",
+      "proofUrl": "https://wa.me/8801700000000",
+      "logoUrl": "https://example.com/logo.png",
+      "iconName": "check-circle",
+      "isActive": true,
+      "totalCompleted": 1,
+      "createdAt": "2026-11-01T09:44:35.100Z"
+    },
+    {
+      "id": "task_1793525653990_zfaz",
+      "title": "Test Task",
+      "shortDescription": "Short Desc",
+      "fullDescription": "Short Desc",
+      "instructions": "নির্দেশনা অনুযায়ী কাজ সম্পন্ন করে স্ক্রিনশট ও আইডি পাঠান।",
+      "category": "other",
+      "rewardAmount": 25,
+      "taskUrl": "https://test.com",
+      "proofMethod": "whatsapp",
+      "proofUrl": "https://wa.me/8801700000000",
+      "iconName": "check-circle",
+      "isActive": true,
+      "totalCompleted": 0,
+      "createdAt": "2026-11-01T09:34:13.990Z"
+    },
+    {
+      "id": "task_yt_sub_1",
+      "title": "ইউটিউব চ্যানেল সাবস্ক্রাইব ও বেল আইকন ক্লিক",
+      "shortDescription": "আমাদের অফিসিয়াল ইউটিউব চ্যানেল সাবস্ক্রাইব করুন এবং বেল আইকন চালু করুন।",
+      "fullDescription": "চ্যানেলে প্রবেশ করে \"Subscribe\" বাটনে চাপ দিন এবং Bell Icon \"All\" সিলেক্ট করুন। সাবস্ক্রাইব করা অবস্থার একটি পরিষ্কার স্ক্রিনশট নিন যাতে আপনার জিমেইল প্রোফাইল ও সাবস্ক্রিপশন দৃশ্যমান থাকে।",
+      "instructions": "১. নিচের \"লিংক খুলুন\" বাটনে ক্লিক করে ইউটিউব চ্যানেলে যান।\n২. Subscribe বাটনে ক্লিক করুন ও বেল আইকন অল করুন।\n৩. স্ক্রিনশট নিন এবং প্রমাণ জমা বাটনে ক্লিক করে আপনার GP Wallet ইউজার আইডি সহ পাঠান।",
+      "category": "youtube",
+      "rewardAmount": 15,
+      "taskUrl": "https://youtube.com",
+      "proofMethod": "telegram",
+      "proofUrl": "https://t.me/gpwalletbd_support",
+      "logoUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&auto=format&fit=crop&q=80",
+      "iconName": "youtube",
+      "isActive": true,
+      "totalCompleted": 142,
+      "createdAt": "2026-10-27T08:57:40.705Z"
+    },
+    {
+      "id": "task_tg_join_1",
+      "title": "অফিসিয়াল টেলিগ্রাম আর্নিং চ্যানেলে যুক্ত হোন",
+      "shortDescription": "টেলিগ্রাম চ্যানেলে জয়েন করে প্রতিদিনের নতুন অফার ও পেমেন্ট প্রুফ আপডেট পান।",
+      "fullDescription": "আমাদের অফিশিয়াল টেলিগ্রাম চ্যানেলে জয়েন করুন এবং অন্তত সর্বশেষ ৩টি মেসেজে রিয়্যাকশন দিন। জয়েন থাকা অবস্থার স্ক্রিনশট প্রমাণ হিসেবে সাবমিট করুন।",
+      "instructions": "১. Telegram চ্যানেলের লিংকে প্রবেশ করুন।\n২. Join Channel বাটনে চাপুন।\n৩. স্ক্রিনশট তুলে নিচে আপনার ইউজার আইডি ও টাস্ক আইডি উল্লেখ করে হোয়াটসঅ্যাপ বা টেলিগ্রামে পাঠান।",
+      "category": "telegram",
+      "rewardAmount": 10,
+      "taskUrl": "https://t.me/gpwalletbd",
+      "proofMethod": "whatsapp",
+      "proofUrl": "https://wa.me/8801700000000",
+      "logoUrl": "https://images.unsplash.com/photo-1614680376593-902f749f7ffc?w=100&auto=format&fit=crop&q=80",
+      "iconName": "send",
+      "isActive": true,
+      "totalCompleted": 211,
+      "createdAt": "2026-10-28T08:57:40.705Z"
+    },
+    {
+      "id": "task_fb_like_1",
+      "title": "ফেসবুক অফিসিয়াল পেজে লাইক ও ফলো করুন",
+      "shortDescription": "ফেসবুক পেজ লাইক দিন, ফলো বাটন চাপুন এবং যেকোনো ১টি পোস্টে লাইক দিন।",
+      "fullDescription": "আমাদের ফেসবুক ভেরিফাইড ব্র্যান্ড পেজে গিয়ে Like ও Follow দিন। পেজের পিন করা পোস্টে একটি সুন্দর কমেন্ট করুন। আপনার ফেসবুক আইডির নাম ও স্ক্রিনশট প্রমাণ পাঠান।",
+      "instructions": "১. ফেসবুক লিংকে ক্লিক করুন।\n২. Like এবং Follow করুন।\n৩. স্ক্রিনশট নিয়ে জমা দিন।",
+      "category": "facebook",
+      "rewardAmount": 12,
+      "taskUrl": "https://facebook.com/gpwalletbd",
+      "proofMethod": "telegram",
+      "proofUrl": "https://t.me/gpwalletbd_support",
+      "logoUrl": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=100&auto=format&fit=crop&q=80",
+      "iconName": "facebook",
+      "isActive": true,
+      "totalCompleted": 98,
+      "createdAt": "2026-10-29T08:57:40.705Z"
+    },
+    {
+      "id": "task_app_reg_1",
+      "title": "মাইক্রোফাইন্যান্স অ্যাপ ডাউনলোড ও সাইন আপ",
+      "shortDescription": "অংশীদার ফিন্যান্স অ্যাপ্লিকেশন ইনস্টল করুন এবং মোবাইল নাম্বার দিয়ে ফ্রিতে একাউন্ট খুলুন।",
+      "fullDescription": "প্লে স্টোর থেকে স্পনসরড অ্যাপটি ডাউনলোড করে আপনার বৈধ মোবাইল নাম্বার দিয়ে সাইন আপ সম্পন্ন করুন। সফল সাইন আপের ওয়েলকাম ড্যাশবোর্ডের স্ক্রিনশট জমা দিন।",
+      "instructions": "১. লিংকে গিয়ে প্লেস্টোর থেকে অ্যাপ ইনস্টল করুন।\n২. নাম ও ফোন দিয়ে ফ্রি একাউন্ট তৈরি করুন।\n৩. ড্যাশবোর্ডের স্ক্রিনশট নিন এবং টাস্ক আইডি ও ইউজার আইডি সহ সেন্ড করুন।",
+      "category": "app_registration",
+      "rewardAmount": 45,
+      "taskUrl": "https://play.google.com",
+      "proofMethod": "whatsapp",
+      "proofUrl": "https://wa.me/8801700000000",
+      "logoUrl": "https://images.unsplash.com/photo-1556742049-0a67e557224f?w=100&auto=format&fit=crop&q=80",
+      "iconName": "smartphone",
+      "isActive": true,
+      "totalCompleted": 64,
+      "createdAt": "2026-10-30T08:57:40.705Z"
+    },
+    {
+      "id": "task_web_visit_1",
+      "title": "স্পনসরড নিউজ পোর্টাল ভিজিট ও ১ মিনিট পাঠ",
+      "shortDescription": "ওয়েবসাইট ভিজিট করুন এবং অন্তত ২ পাতা স্ক্রল করে ১ মিনিট অবস্থান করুন।",
+      "fullDescription": "ওয়েবসাইটে প্রবেশ করে যেকোনো একটি আর্টিকেলে ক্লিক করুন। ১ মিনিট সময় নিয়ে পুরো পেজটি স্ক্রল করে পড়ুন এবং ভিজিট হিস্টোরি বা পেজের নিচের অংশের স্ক্রিনশট নিন।",
+      "instructions": "১. ওপেন লিংক ক্লিক করুন।\n২. ওয়েবসাইটে ৬০ সেকেন্ড সময় কাটান।\n৩. প্রুফ হিসেবে স্ক্রিনশট হোয়াটসঅ্যাপে প্রেরণ করুন।",
+      "category": "web_visit",
+      "rewardAmount": 8,
+      "taskUrl": "https://bdnews24.com",
+      "proofMethod": "whatsapp",
+      "proofUrl": "https://wa.me/8801700000000",
+      "logoUrl": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100&auto=format&fit=crop&q=80",
+      "iconName": "globe",
+      "isActive": true,
+      "totalCompleted": 312,
+      "createdAt": "2026-10-31T08:57:40.705Z"
+    },
+    {
+      "id": "task_web_reg_1",
+      "title": "অনলাইন শপ রেজিস্ট্রেশন ও ইমেইল ভেরিফাই",
+      "shortDescription": "বিডি শপ পোর্টালে নতুন অ্যাকাউন্ট খুলুন এবং ইমেইল নিশ্চিত করুন।",
+      "fullDescription": "ওয়েবসাইটে ফ্রি অ্যাকাউন্ট খুলুন। সফল প্রোফাইল ক্রিয়েশনের পর অ্যাকাউন্ট পেইজের স্ক্রিনশট প্রমাণ হিসেবে পাঠান।",
+      "instructions": "১. ওপেন লিংকে গিয়ে Register বাটনে চাপুন।\n২. নাম, ইমেইল দিয়ে সাবমিট করুন।\n৩. সফল লগইন পাতার স্ক্রিনশট জমা দিন।",
+      "category": "web_registration",
+      "rewardAmount": 35,
+      "taskUrl": "https://daraz.com.bd",
+      "proofMethod": "telegram",
+      "proofUrl": "https://t.me/gpwalletbd_support",
+      "logoUrl": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=100&auto=format&fit=crop&q=80",
+      "iconName": "shopping-bag",
+      "isActive": true,
+      "totalCompleted": 89,
+      "createdAt": "2026-10-31T20:57:40.705Z"
+    }
+  ],
+  "taskSubmissions": [
+    {
+      "id": "sub_1793526312608_2aba",
+      "taskId": "task_1793526312553_a1ik",
+      "taskTitle": "অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন",
+      "userId": "GP65607",
+      "userName": "রাকিবুল হাসান",
+      "userMobile": "01788002600",
+      "rewardAmount": 20,
+      "proofNote": "User ID GP65607 completed task",
+      "proofMethodUsed": "telegram",
+      "status": "approved",
+      "submittedAt": "2026-11-01T09:45:12.608Z",
+      "adminFeedback": "সফলভাবে যাচাই করা হয়েছে",
+      "reviewedAt": "2026-11-01T09:45:12.613Z"
+    },
+    {
+      "id": "sub_1793526275117_1uyp",
+      "taskId": "task_1793526275100_26b3",
+      "taskTitle": "টেস্ট ফেসবুক ফলো টাস্ক",
+      "userId": "GP97827",
+      "userName": "রাকিবুল হাসান",
+      "userMobile": "01711005111",
+      "rewardAmount": 25,
+      "proofNote": "User ID GP97827 completed facebook task",
+      "proofMethodUsed": "whatsapp",
+      "status": "approved",
+      "submittedAt": "2026-11-01T09:44:35.117Z",
+      "adminFeedback": "সফলভাবে যাচাই করা হয়েছে",
+      "reviewedAt": "2026-11-01T09:44:35.123Z"
+    },
+    {
+      "id": "sub_1793524275886_z54v",
+      "taskId": "task_yt_sub_1",
+      "taskTitle": "ইউটিউব চ্যানেল সাবস্ক্রাইব ও বেল আইকন ক্লিক",
+      "userId": "GP10021",
+      "userName": "সাকিব আল হাসান",
+      "userMobile": "01812345678",
+      "rewardAmount": 15,
+      "proofNote": "GP10021\ntask_yt_sub_1",
+      "proofMethodUsed": "telegram",
+      "status": "rejected",
+      "submittedAt": "2026-11-01T09:11:15.886Z",
+      "adminFeedback": "আপনি আমাদের নীতিমালা লঙ্ঘন করেছেন ",
+      "reviewedAt": "2026-11-01T09:12:52.149Z"
+    },
+    {
+      "id": "sub_demo_1",
+      "taskId": "task_tg_join_1",
+      "taskTitle": "অফিসিয়াল টেলিগ্রাম আর্নিং চ্যানেলে যুক্ত হোন",
+      "userId": "GP10021",
+      "userName": "সাকিব আল হাসান",
+      "userMobile": "01812345678",
+      "rewardAmount": 10,
+      "proofNote": "আমি চ্যানেলে জয়েন করেছি এবং ৩টি পোস্টে লাইক দিয়েছি। স্ক্রিনশট হোয়াটসঅ্যাপে পাঠিয়েছি।",
+      "proofMethodUsed": "whatsapp",
+      "status": "approved",
+      "submittedAt": "2026-11-01T06:57:40.705Z",
+      "adminFeedback": "সফলভাবে যাচাই করা হয়েছে",
+      "reviewedAt": "2026-11-01T09:40:15.553Z"
+    }
+  ],
+  "referralMilestones": [
+    {
+      "id": 1,
+      "title": "২০ জন সফল রেফারেল বোনাস",
+      "requiredReferrals": 20,
+      "rewardAmount": 1000
+    },
+    {
+      "id": 2,
+      "title": "৩০ জন সফল রেফারেল বোনাস",
+      "requiredReferrals": 30,
+      "rewardAmount": 1500
+    },
+    {
+      "id": 3,
+      "title": "১০০ জন ভিআইপি রেফারেল বোনাস",
+      "requiredReferrals": 100,
+      "rewardAmount": 5000
+    }
+  ],
+  "referralClaims": [
+    {
+      "id": "claim_1793524543186_jnet",
+      "userId": "GP10021",
+      "userName": "সাকিব আল হাসান",
+      "userMobile": "01812345678",
+      "milestoneId": 1,
+      "milestoneName": "২০ জন সফল রেফারেল বোনাস",
+      "rewardAmount": 1000,
+      "referralsAtClaim": 22,
+      "status": "approved",
+      "claimedAt": "2026-11-01T09:15:43.186Z",
+      "reviewedAt": "2026-11-01T09:40:23.294Z"
+    }
+  ],
+  "withdrawals": [
+    {
+      "id": "wth_1793523632814_mung",
+      "userId": "GP10021",
+      "userName": "সাকিব আল হাসান",
+      "userMobile": "01812345678",
+      "paymentMethod": "nagad",
+      "accountMobileNumber": "01576996800",
+      "amount": 100,
+      "status": "Paid",
+      "requestedAt": "2026-11-01T09:00:32.814Z",
+      "processedAt": "2026-11-01T09:21:50.148Z"
+    },
+    {
+      "id": "wth_demo_1",
+      "userId": "GP10021",
+      "userName": "সাকিব আল হাসান",
+      "userMobile": "01812345678",
+      "paymentMethod": "bkash",
+      "accountMobileNumber": "01812345678",
+      "amount": 100,
+      "status": "Paid",
+      "requestedAt": "2026-10-27T08:57:40.705Z",
+      "processedAt": "2026-10-28T08:57:40.705Z"
+    }
+  ],
+  "transactions": [
+    {
+      "userId": "GP30966",
+      "type": "ADMIN_ADJUSTMENT",
+      "amount": 1000,
+      "description": "এডমিন সমন্বয়: Hi (দ্বারা: admin)",
+      "balanceAfter": 1070,
+      "id": "tx_1793526550482_vfj1",
+      "createdAt": "2026-11-01T09:49:10.482Z"
+    },
+    {
+      "userId": "GP65607",
+      "type": "TASK_REWARD",
+      "amount": 20,
+      "description": "টাস্ক পুরস্কার অনুমোদিত: \"অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন\"",
+      "referenceId": "sub_1793526312608_2aba",
+      "balanceAfter": 40,
+      "id": "tx_1793526312613_jlzr",
+      "createdAt": "2026-11-01T09:45:12.613Z"
+    },
+    {
+      "userId": "GP65607",
+      "type": "SIGNUP_BONUS",
+      "amount": 20,
+      "description": "নতুন রেজিস্ট্রেশন ওয়েলকাম বোনাস",
+      "balanceAfter": 20,
+      "id": "tx_1793526312602_ntf4",
+      "createdAt": "2026-11-01T09:45:12.602Z"
+    },
+    {
+      "userId": "GP97827",
+      "type": "TASK_REWARD",
+      "amount": 25,
+      "description": "টাস্ক পুরস্কার অনুমোদিত: \"টেস্ট ফেসবুক ফলো টাস্ক\"",
+      "referenceId": "sub_1793526275117_1uyp",
+      "balanceAfter": 45,
+      "id": "tx_1793526275123_klyg",
+      "createdAt": "2026-11-01T09:44:35.123Z"
+    },
+    {
+      "userId": "GP97827",
+      "type": "SIGNUP_BONUS",
+      "amount": 20,
+      "description": "নতুন রেজিস্ট্রেশন ওয়েলকাম বোনাস",
+      "balanceAfter": 20,
+      "id": "tx_1793526275112_loy4",
+      "createdAt": "2026-11-01T09:44:35.112Z"
+    },
+    {
+      "userId": "GP30966",
+      "type": "ADMIN_ADJUSTMENT",
+      "amount": 50,
+      "description": "এডমিন সমন্বয়: আসসালামু (দ্বারা: admin)",
+      "balanceAfter": 70,
+      "id": "tx_1793526257019_0t0a",
+      "createdAt": "2026-11-01T09:44:17.019Z"
+    },
+    {
+      "userId": "GP26558",
+      "type": "SIGNUP_BONUS",
+      "amount": 20,
+      "description": "নতুন রেজিস্ট্রেশন ওয়েলকাম বোনাস",
+      "balanceAfter": 20,
+      "id": "tx_1793526242590_5are",
+      "createdAt": "2026-11-01T09:44:02.590Z"
+    },
+    {
+      "userId": "GP10021",
+      "type": "REFERRAL_REWARD",
+      "amount": 1000,
+      "description": "রেফারেল মাইলস্টোন পুরস্কার: ২০ জন সফল রেফারেল বোনাস",
+      "referenceId": "claim_1793524543186_jnet",
+      "balanceAfter": 1190,
+      "id": "tx_1793526023294_mdit",
+      "createdAt": "2026-11-01T09:40:23.295Z"
+    },
+    {
+      "userId": "GP10021",
+      "type": "TASK_REWARD",
+      "amount": 10,
+      "description": "টাস্ক পুরস্কার অনুমোদিত: \"অফিসিয়াল টেলিগ্রাম আর্নিং চ্যানেলে যুক্ত হোন\"",
+      "referenceId": "sub_demo_1",
+      "balanceAfter": 190,
+      "id": "tx_1793526015554_t879",
+      "createdAt": "2026-11-01T09:40:15.554Z"
+    },
+    {
+      "userId": "GP30966",
+      "type": "SIGNUP_BONUS",
+      "amount": 20,
+      "description": "নতুন রেজিস্ট্রেশন ওয়েলকাম বোনাস",
+      "balanceAfter": 20,
+      "id": "tx_1793524675607_wzki",
+      "createdAt": "2026-11-01T09:17:55.607Z"
+    },
+    {
+      "userId": "GP10021",
+      "type": "WITHDRAWAL_RESERVE",
+      "amount": -100,
+      "description": "Nagad উত্তোলন অনুরোধ (সংরক্ষিত: 01576996800)",
+      "referenceId": "wth_1793523632814_mung",
+      "balanceAfter": 180,
+      "id": "tx_1793523632814_eqoa",
+      "createdAt": "2026-11-01T09:00:32.814Z"
+    },
+    {
+      "id": "tx_init_1",
+      "userId": "GP10021",
+      "type": "SIGNUP_BONUS",
+      "amount": 50,
+      "description": "স্বাগতম বোনাস",
+      "balanceAfter": 50,
+      "createdAt": "2026-10-17T08:57:40.705Z"
+    },
+    {
+      "id": "tx_init_2",
+      "userId": "GP10021",
+      "type": "TASK_REWARD",
+      "amount": 15,
+      "description": "ইউটিউব সাবস্ক্রাইব টাস্ক সম্পন্ন করার পুরস্কার",
+      "referenceId": "task_yt_sub_1",
+      "balanceAfter": 65,
+      "createdAt": "2026-10-18T08:57:40.705Z"
+    },
+    {
+      "id": "tx_init_3",
+      "userId": "GP10021",
+      "type": "TASK_REWARD",
+      "amount": 45,
+      "description": "মাইক্রোফাইন্যান্স অ্যাপ ডাউনলোড ও সাইন আপ পুরস্কার",
+      "referenceId": "task_app_reg_1",
+      "balanceAfter": 110,
+      "createdAt": "2026-10-20T08:57:40.705Z"
+    },
+    {
+      "id": "tx_init_4",
+      "userId": "GP10021",
+      "type": "WITHDRAWAL_RESERVE",
+      "amount": -100,
+      "description": "bKash উত্তোলন অনুরোধ (সংরক্ষিত)",
+      "referenceId": "wth_demo_1",
+      "balanceAfter": 10,
+      "createdAt": "2026-10-27T08:57:40.705Z"
+    },
+    {
+      "id": "tx_init_5",
+      "userId": "GP10021",
+      "type": "TASK_REWARD",
+      "amount": 270,
+      "description": "দৈনিক স্পন্সরড টাস্ক রিওয়ার্ড",
+      "balanceAfter": 280,
+      "createdAt": "2026-10-30T08:57:40.705Z"
+    }
+  ],
+  "notifications": [
+    {
+      "userId": "GP75311",
+      "title": "GP Wallet BD-তে স্বাগতম!",
+      "message": "আপনার গুগল অ্যাকাউন্ট দিয়ে একাউন্ট তৈরি সফল হয়েছে এবং ৳২০ ওয়েলকাম বোনাস যোগ করা হয়েছে।",
+      "type": "system",
+      "id": "notif_1793532357173_irua",
+      "isRead": false,
+      "createdAt": "2026-11-01T11:25:57.173Z"
+    },
+    {
+      "userId": "GP30966",
+      "title": "ব্যালেন্স সমন্বয় সম্পন্ন",
+      "message": "এডমিন আপনার ব্যালেন্সে +৳1000 পরিবর্তন করেছেন। কারণ: Hi",
+      "type": "system",
+      "id": "notif_1793526550483_g24q",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:49:10.483Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "রেফারেল সক্রিয় হয়েছে (Active Referral)!",
+      "message": "আপনার আমন্ত্রিত সদস্য রাকিবুল হাসান (GP65607) সফলভাবে একটি টাস্ক সম্পন্ন ও অনুমোদিত করেছেন। আপনার রেফারেল এখন Active হয়েছে!",
+      "type": "referral",
+      "id": "notif_1793526312614_szwj",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:45:12.614Z"
+    },
+    {
+      "userId": "GP65607",
+      "title": "টাস্ক অনুমোদিত হয়েছে! (৳20)",
+      "message": "আপনার জমা দেওয়া \"অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন\" টাস্কটি এডমিন কর্তৃক অনুমোদিত হয়েছে এবং ৳20 ব্যালেন্সে যোগ হয়েছে।",
+      "type": "task",
+      "id": "notif_1793526312614_b4zk",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:45:12.614Z"
+    },
+    {
+      "userId": "GP65607",
+      "title": "টাস্ক সাবমিশন গৃহীত হয়েছে",
+      "message": "\"অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন\" টাস্কের প্রমাণ সফলভাবে জমা হয়েছে। অ্যাডমিন যাচাই শেষে ৳20 আপনার ব্যালেন্সে যোগ হবে।",
+      "type": "task",
+      "id": "notif_1793526312608_6r7h",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:45:12.608Z"
+    },
+    {
+      "userId": "GP65607",
+      "title": "GP Wallet BD-তে স্বাগতম!",
+      "message": "আপনার একাউন্ট সফলভাবে তৈরি হয়েছে এবং ৳২০ ওয়েলকাম বোনাস যুক্ত করা হয়েছে। প্রতিদিন টাস্ক সম্পন্ন করে আয় করুন!",
+      "type": "system",
+      "id": "notif_1793526312603_yv1u",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:45:12.603Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "নতুন রেফারেল যুক্ত হয়েছে (Inactive)",
+      "message": "রাকিবুল হাসান (GP65607) আপনার রেফারেল কোড দিয়ে একাউন্ট খুলেছেন। টাস্ক সম্পন্ন ও অনুমোদিত হলে উনি Active রেফারেল হবেন।",
+      "type": "referral",
+      "id": "notif_1793526312603_4v7c",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:45:12.603Z"
+    },
+    {
+      "userId": "GP97827",
+      "title": "টাস্ক অনুমোদিত হয়েছে! (৳25)",
+      "message": "আপনার জমা দেওয়া \"টেস্ট ফেসবুক ফলো টাস্ক\" টাস্কটি এডমিন কর্তৃক অনুমোদিত হয়েছে এবং ৳25 ব্যালেন্সে যোগ হয়েছে।",
+      "type": "task",
+      "id": "notif_1793526275123_p97k",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:35.123Z"
+    },
+    {
+      "userId": "GP97827",
+      "title": "টাস্ক সাবমিশন গৃহীত হয়েছে",
+      "message": "\"টেস্ট ফেসবুক ফলো টাস্ক\" টাস্কের প্রমাণ সফলভাবে জমা হয়েছে। অ্যাডমিন যাচাই শেষে ৳25 আপনার ব্যালেন্সে যোগ হবে।",
+      "type": "task",
+      "id": "notif_1793526275118_fdgx",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:35.118Z"
+    },
+    {
+      "userId": "GP97827",
+      "title": "GP Wallet BD-তে স্বাগতম!",
+      "message": "আপনার একাউন্ট সফলভাবে তৈরি হয়েছে এবং ৳২০ ওয়েলকাম বোনাস যুক্ত করা হয়েছে। প্রতিদিন টাস্ক সম্পন্ন করে আয় করুন!",
+      "type": "system",
+      "id": "notif_1793526275113_ywfo",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:35.113Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "নতুন রেফারেল যুক্ত হয়েছে!",
+      "message": "রাকিবুল হাসান (GP97827) আপনার রেফারেল কোড দিয়ে সফলভাবে একাউন্ট খুলেছেন।",
+      "type": "referral",
+      "id": "notif_1793526275113_snz2",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:35.113Z"
+    },
+    {
+      "userId": "GP30966",
+      "title": "ব্যালেন্স সমন্বয় সম্পন্ন",
+      "message": "এডমিন আপনার ব্যালেন্সে +৳50 পরিবর্তন করেছেন। কারণ: আসসালামু",
+      "type": "system",
+      "id": "notif_1793526257019_k5iy",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:17.019Z"
+    },
+    {
+      "userId": "GP26558",
+      "title": "GP Wallet BD-তে স্বাগতম!",
+      "message": "আপনার একাউন্ট সফলভাবে তৈরি হয়েছে এবং ৳২০ ওয়েলকাম বোনাস যুক্ত করা হয়েছে। প্রতিদিন টাস্ক সম্পন্ন করে আয় করুন!",
+      "type": "system",
+      "id": "notif_1793526242591_erji",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:44:02.591Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "রেফারেল বোনাস ক্রেডিট হয়েছে! (৳1000)",
+      "message": "অভিনন্দন! আপনার ২০ জন সফল রেফারেল বোনাস দাবি অনুমোদিত হয়েছে এবং ৳1000 ব্যালেন্সে যুক্ত করা হয়েছে।",
+      "type": "referral",
+      "id": "notif_1793526023295_xob1",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:40:23.295Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "টাস্ক অনুমোদিত হয়েছে! (৳10)",
+      "message": "আপনার জমা দেওয়া \"অফিসিয়াল টেলিগ্রাম আর্নিং চ্যানেলে যুক্ত হোন\" টাস্কটি এডমিন কর্তৃক অনুমোদিত হয়েছে এবং ৳10 ব্যালেন্সে যোগ হয়েছে।",
+      "type": "task",
+      "id": "notif_1793526015554_x43x",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:40:15.554Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "পেমেন্ট সফল হয়েছে! (৳100)",
+      "message": "আপনার NAGAD নম্বরে (01576996800) ৳100 সফলভাবে পেমেন্ট প্রদান করা হয়েছে।",
+      "type": "withdrawal",
+      "id": "notif_1793524910148_lkae",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:21:50.148Z"
+    },
+    {
+      "userId": "GP30966",
+      "title": "GP Wallet BD-তে স্বাগতম!",
+      "message": "আপনার একাউন্ট সফলভাবে তৈরি হয়েছে এবং ৳২০ ওয়েলকাম বোনাস যুক্ত করা হয়েছে। প্রতিদিন টাস্ক সম্পন্ন করে আয় করুন!",
+      "type": "system",
+      "id": "notif_1793524675607_d2dq",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:17:55.607Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "রেফারেল পুরস্কার দাবি জমা হয়েছে",
+      "message": "২০ জন সফল রেফারেল বোনাস (৳1000) দাবি সফলভাবে জমা হয়েছে। অ্যাডমিন রিভিউ করে আপনার ব্যালেন্সে ক্রেডিট করবে।",
+      "type": "referral",
+      "id": "notif_1793524543187_2j2p",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:15:43.187Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "টাস্ক সাবমিশন বাতিল হয়েছে",
+      "message": "\"ইউটিউব চ্যানেল সাবস্ক্রাইব ও বেল আইকন ক্লিক\" টাস্কটি বাতিল করা হয়েছে। কারণ: আপনি আমাদের নীতিমালা লঙ্ঘন করেছেন ",
+      "type": "task",
+      "id": "notif_1793524372149_1qlx",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:12:52.149Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "টাস্ক সাবমিশন গৃহীত হয়েছে",
+      "message": "\"ইউটিউব চ্যানেল সাবস্ক্রাইব ও বেল আইকন ক্লিক\" টাস্কের প্রমাণ সফলভাবে জমা হয়েছে। অ্যাডমিন যাচাই শেষে ৳15 আপনার ব্যালেন্সে যোগ হবে।",
+      "type": "task",
+      "id": "notif_1793524275887_eo3w",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:11:15.887Z"
+    },
+    {
+      "userId": "GP10021",
+      "title": "উত্তোলন অনুরোধ গৃহীত হয়েছে",
+      "message": "৳100 উত্তোলনের অনুরোধ সফলভাবে গ্রহণ করা হয়েছে (NAGAD)। আপনার টাকা সংরক্ষিত রাখা হয়েছে এবং শীঘ্রই পাঠানো হবে।",
+      "type": "withdrawal",
+      "id": "notif_1793523632814_neb9",
+      "isRead": false,
+      "createdAt": "2026-11-01T09:00:32.814Z"
+    },
+    {
+      "id": "notif_welcome",
+      "userId": "GP10021",
+      "title": "স্বাগতম GP Wallet BD-তে!",
+      "message": "আপনার অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে। প্রতিদিন নতুন নতুন টাস্ক সম্পন্ন করে বিকাশ ও নগদে টাকা উত্তোলন করুন।",
+      "type": "system",
+      "isRead": false,
+      "createdAt": "2026-10-17T08:57:40.705Z"
+    },
+    {
+      "id": "notif_payout",
+      "userId": "GP10021",
+      "title": "উত্তোলন সফল হয়েছে (৳১০০)",
+      "message": "আপনার bKash নম্বরে ৳১০০ সফলভাবে প্রেরণ করা হয়েছে। ধন্যবাদ GP Wallet BD-এর সাথে থাকার জন্য!",
+      "type": "withdrawal",
+      "isRead": true,
+      "createdAt": "2026-10-28T08:57:40.705Z"
+    }
+  ],
+  "settings": {
+    "siteName": "GP Wallet BD",
+    "siteLogo": "/src/assets/images/gp_wallet_logo_1793521411853.jpg",
+    "announcement": "স্বাগতম GP Wallet BD-তে! সফলভাবে প্রতিটি টাস্ক শেষ করে প্রমাণ জমা দিন এবং বিকাশ বা নগদে সরাসরি দ্রুত পেমেন্ট নিন। কোনো ভুয়া তথ্য দিলে আইডি সাময়িক ব্লক হতে পারে।",
+    "whatsappUrl": "https://wa.me/8801700000000",
+    "telegramUrl": "https://t.me/gpwalletbd",
+    "facebookUrl": "https://facebook.com/gpwalletbd",
+    "helpCenterUrl": "https://t.me/gpwalletbd_support",
+    "termsAndConditions": "১. প্রতিটি ব্যবহারকারী কেবল একটি একাউন্ট ব্যবহার করতে পারবেন।\n২. টাস্কের সঠিক স্ক্রিনশট এবং ইউজার আইডি প্রমাণ হিসেবে জমা দিতে হবে।\n৩. রেফারেল কমিশন কেবল তখনই গণ্য হবে যখন আমন্ত্রিত ব্যক্তি সক্রিয়ভাবে টাস্ক সম্পন্ন করবে।\n৪. কোনো অসদুপায় বা অটোমেশন ব্যবহার করলে অ্যাকাউন্ট কোনো নোটিশ ছাড়াই স্থায়ীভাবে সাসপেন্ড করা হবে।",
+    "privacyPolicy": "GP Wallet BD আপনার ব্যক্তিগত তথ্যের গোপনীয়তা রক্ষা করতে প্রতিশ্রুতিবদ্ধ। আপনার মোবাইল নম্বর ও লেনদেনের তথ্য কেবল পেমেন্ট প্রক্রিয়াকরণ ও যোগাযোগের জন্য সুরক্ষিতভাবে সংরক্ষিত থাকে।",
+    "referralPolicy": "১. আপনার রেফারেল কোড ব্যবহার করে যেকোনো নতুন ব্যবহারকারী নিবন্ধন করতে পারবেন।\n২. ২০, ৩০ এবং ১০০ জন সফল রেফারে যথাক্রমে ১০০০৳, ১৫০০৳ এবং ৫০০০৳ বোনাস দাবি করতে পারবেন।\n৩. প্রতিটি মাইলস্টোন একবারই দাবি করা যাবে। এডমিন ভেরিফিকেশনের পর মূল ব্যালেন্সে যুক্ত হবে।",
+    "withdrawalPolicy": "১. সর্বনিম্ন উত্তোলন ১০০ টাকা এবং সর্বোচ্চ ৫,০০০ টাকা।\n২. ২৪ ঘণ্টায় সর্বোচ্চ ১ বার উইথড্র রিকোয়েস্ট দেওয়া যাবে।\n৩. বিকাশ ও নগদ পার্সোনাল নাম্বারে ক্যাশ-আউট বা সেন্ড মানি পাঠানো হয়।\n৪. সাধারণত ২ থেকে ১২ ঘণ্টার মধ্যে এডমিন যাচাই করে পেমেন্ট সম্পন্ন করেন।",
+    "minWithdrawal": 100,
+    "maxWithdrawal": 5000,
+    "withdrawalIntervalHours": 24,
+    "bkashEnabled": true,
+    "nagadEnabled": true,
+    "bkashInstructions": "আপনার সচল bKash Personal নম্বর দিন। উইথড্র রিকোয়েস্ট দেওয়ার পর ব্যালেন্স থেকে সমপরিমাণ টাকা সাময়িক রিজার্ভ রাখা হবে এবং পেমেন্ট সম্পন্ন হলে \"Paid\" স্ট্যাটাস দেখাবে।",
+    "nagadInstructions": "আপনার সচল Nagad Personal নম্বর দিন। এডমিন ভেরিফাই করে আপনার নাম্বারে সরাসরি টাকা ট্রান্সফার করবে।",
+    "maintenanceMode": false
+  },
+  "auditLogs": [
+    {
+      "id": "audit_1793527817348_ef5hr",
+      "adminUsername": "admin",
+      "action": "DELETE_TASK",
+      "details": "টাস্ক মুছে ফেলা হয়েছে: টেস্ট টাস্ক ৳10000",
+      "targetId": "task_1793527817343_1spt",
+      "timestamp": "2026-11-01T10:10:17.348Z"
+    },
+    {
+      "id": "audit_1793527817346_5ir4y",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট টাস্ক ৳10000",
+      "targetId": "task_1793527817343_1spt",
+      "timestamp": "2026-11-01T10:10:17.346Z"
+    },
+    {
+      "id": "audit_1793527817344_7ntne",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট টাস্ক ৳10000 (৳10000)",
+      "targetId": "task_1793527817343_1spt",
+      "timestamp": "2026-11-01T10:10:17.344Z"
+    },
+    {
+      "id": "audit_1793527817341_4kjj2",
+      "adminUsername": "admin",
+      "action": "DELETE_TASK",
+      "details": "টাস্ক মুছে ফেলা হয়েছে: টেস্ট টাস্ক ৳5000",
+      "targetId": "task_1793527817335_l1ou",
+      "timestamp": "2026-11-01T10:10:17.341Z"
+    },
+    {
+      "id": "audit_1793527817339_vpiso",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট টাস্ক ৳5000",
+      "targetId": "task_1793527817335_l1ou",
+      "timestamp": "2026-11-01T10:10:17.339Z"
+    },
+    {
+      "id": "audit_1793527817336_0e0zv",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট টাস্ক ৳5000 (৳5000)",
+      "targetId": "task_1793527817335_l1ou",
+      "timestamp": "2026-11-01T10:10:17.336Z"
+    },
+    {
+      "id": "audit_1793527817334_acvb4",
+      "adminUsername": "admin",
+      "action": "DELETE_TASK",
+      "details": "টাস্ক মুছে ফেলা হয়েছে: টেস্ট টাস্ক ৳1000",
+      "targetId": "task_1793527817327_mn5y",
+      "timestamp": "2026-11-01T10:10:17.334Z"
+    },
+    {
+      "id": "audit_1793527817331_nxkag",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট টাস্ক ৳1000",
+      "targetId": "task_1793527817327_mn5y",
+      "timestamp": "2026-11-01T10:10:17.331Z"
+    },
+    {
+      "id": "audit_1793527817328_dnbnm",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট টাস্ক ৳1000 (৳1000)",
+      "targetId": "task_1793527817327_mn5y",
+      "timestamp": "2026-11-01T10:10:17.328Z"
+    },
+    {
+      "id": "audit_1793527817324_wslh9",
+      "adminUsername": "admin",
+      "action": "DELETE_TASK",
+      "details": "টাস্ক মুছে ফেলা হয়েছে: টেস্ট টাস্ক ৳100",
+      "targetId": "task_1793527817318_s0y4",
+      "timestamp": "2026-11-01T10:10:17.324Z"
+    },
+    {
+      "id": "audit_1793527817321_cr4lu",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট টাস্ক ৳100",
+      "targetId": "task_1793527817318_s0y4",
+      "timestamp": "2026-11-01T10:10:17.321Z"
+    },
+    {
+      "id": "audit_1793527817318_1jy2j",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট টাস্ক ৳100 (৳100)",
+      "targetId": "task_1793527817318_s0y4",
+      "timestamp": "2026-11-01T10:10:17.318Z"
+    },
+    {
+      "id": "audit_1793527817315_01z1j",
+      "adminUsername": "admin",
+      "action": "DELETE_TASK",
+      "details": "টাস্ক মুছে ফেলা হয়েছে: টেস্ট টাস্ক ৳1",
+      "targetId": "task_1793527817306_r959",
+      "timestamp": "2026-11-01T10:10:17.315Z"
+    },
+    {
+      "id": "audit_1793527817312_z5cah",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট টাস্ক ৳1",
+      "targetId": "task_1793527817306_r959",
+      "timestamp": "2026-11-01T10:10:17.312Z"
+    },
+    {
+      "id": "audit_1793527817306_q30on",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট টাস্ক ৳1 (৳1)",
+      "targetId": "task_1793527817306_r959",
+      "timestamp": "2026-11-01T10:10:17.306Z"
+    },
+    {
+      "id": "audit_1793526550483",
+      "adminUsername": "admin",
+      "action": "ADJUST_BALANCE",
+      "details": "ব্যালেন্স সমন্বয়: MD MUSTAFA KAMAL (GP30966) -> +৳1000, কারণ: Hi",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:49:10.483Z"
+    },
+    {
+      "id": "audit_1793526312615",
+      "adminUsername": "admin",
+      "action": "APPROVE_TASK_SUBMISSION",
+      "details": "টাস্ক সাবমিশন অনুমোদন: রাকিবুল হাসান (GP65607) - ৳20",
+      "targetId": "sub_1793526312608_2aba",
+      "timestamp": "2026-11-01T09:45:12.615Z"
+    },
+    {
+      "id": "audit_1793526312615_fix_2_fqap",
+      "adminUsername": "admin",
+      "action": "ACTIVATE_REFERRAL",
+      "details": "আমন্ত্রিত ইউজার রাকিবুল হাসান (GP65607) এর প্রথম টাস্ক অনুমোদিত হওয়ায় আমন্ত্রণকারী সাকিব আল হাসান (GP10021) এর Active Referral কাউন্ট ১ বৃদ্ধি পেয়ে 2 হয়েছে।",
+      "targetId": "GP10021",
+      "timestamp": "2026-11-01T09:45:12.615Z"
+    },
+    {
+      "id": "audit_1793526312594",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন",
+      "targetId": "task_1793526312553_a1ik",
+      "timestamp": "2026-11-01T09:45:12.594Z"
+    },
+    {
+      "id": "audit_1793526312563",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন",
+      "targetId": "task_1793526312553_a1ik",
+      "timestamp": "2026-11-01T09:45:12.563Z"
+    },
+    {
+      "id": "audit_1793526312554",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: অফিসিয়াল টেলিগ্রাম চ্যানেলে জয়েন (৳20)",
+      "targetId": "task_1793526312553_a1ik",
+      "timestamp": "2026-11-01T09:45:12.554Z"
+    },
+    {
+      "id": "audit_1793526275124",
+      "adminUsername": "admin",
+      "action": "APPROVE_TASK_SUBMISSION",
+      "details": "টাস্ক সাবমিশন অনুমোদন: রাকিবুল হাসান (GP97827) - ৳25",
+      "targetId": "sub_1793526275117_1uyp",
+      "timestamp": "2026-11-01T09:44:35.124Z"
+    },
+    {
+      "id": "audit_1793526275106",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট ফেসবুক ফলো টাস্ক",
+      "targetId": "task_1793526275100_26b3",
+      "timestamp": "2026-11-01T09:44:35.106Z"
+    },
+    {
+      "id": "audit_1793526275103",
+      "adminUsername": "admin",
+      "action": "UPDATE_TASK",
+      "details": "টাস্ক আপডেট করা হয়েছে: টেস্ট ফেসবুক ফলো টাস্ক",
+      "targetId": "task_1793526275100_26b3",
+      "timestamp": "2026-11-01T09:44:35.103Z"
+    },
+    {
+      "id": "audit_1793526275100",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: টেস্ট ফেসবুক ফলো টাস্ক (৳25)",
+      "targetId": "task_1793526275100_26b3",
+      "timestamp": "2026-11-01T09:44:35.100Z"
+    },
+    {
+      "id": "audit_1793526257019",
+      "adminUsername": "admin",
+      "action": "ADJUST_BALANCE",
+      "details": "ব্যালেন্স সমন্বয়: MD MUSTAFA KAMAL (GP30966) -> +৳50, কারণ: আসসালামু",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:44:17.019Z"
+    },
+    {
+      "id": "audit_1793526127543",
+      "adminUsername": "admin",
+      "action": "TOGGLE_USER_STATUS",
+      "details": "ব্যবহারকারী স্ট্যাটাস পরিবর্তন: MD MUSTAFA KAMAL (GP30966) -> active",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:42:07.543Z"
+    },
+    {
+      "id": "audit_1793526122271",
+      "adminUsername": "admin",
+      "action": "TOGGLE_USER_STATUS",
+      "details": "ব্যবহারকারী স্ট্যাটাস পরিবর্তন: MD MUSTAFA KAMAL (GP30966) -> suspended",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:42:02.271Z"
+    },
+    {
+      "id": "audit_1793526119133",
+      "adminUsername": "admin",
+      "action": "TOGGLE_USER_STATUS",
+      "details": "ব্যবহারকারী স্ট্যাটাস পরিবর্তন: MD MUSTAFA KAMAL (GP30966) -> active",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:41:59.133Z"
+    },
+    {
+      "id": "audit_1793526115365",
+      "adminUsername": "admin",
+      "action": "TOGGLE_USER_STATUS",
+      "details": "ব্যবহারকারী স্ট্যাটাস পরিবর্তন: MD MUSTAFA KAMAL (GP30966) -> suspended",
+      "targetId": "GP30966",
+      "timestamp": "2026-11-01T09:41:55.365Z"
+    },
+    {
+      "id": "audit_1793526023295",
+      "adminUsername": "admin",
+      "action": "APPROVE_REFERRAL_CLAIM",
+      "details": "রেফারেল ক্লেইম অনুমোদন: সাকিব আল হাসান (GP10021) - ৳1000",
+      "targetId": "claim_1793524543186_jnet",
+      "timestamp": "2026-11-01T09:40:23.295Z"
+    },
+    {
+      "id": "audit_1793526015554",
+      "adminUsername": "admin",
+      "action": "APPROVE_TASK_SUBMISSION",
+      "details": "টাস্ক সাবমিশন অনুমোদন: সাকিব আল হাসান (GP10021) - ৳10",
+      "targetId": "sub_demo_1",
+      "timestamp": "2026-11-01T09:40:15.554Z"
+    },
+    {
+      "id": "audit_1793525653991",
+      "adminUsername": "admin",
+      "action": "CREATE_TASK",
+      "details": "নতুন টাস্ক তৈরি করা হয়েছে: Test Task (৳25)",
+      "targetId": "task_1793525653990_zfaz",
+      "timestamp": "2026-11-01T09:34:13.991Z"
+    },
+    {
+      "id": "audit_1793524910148",
+      "adminUsername": "admin",
+      "action": "PAY_WITHDRAWAL",
+      "details": "উত্তোলন সম্পন্ন (PAID): সাকিব আল হাসান (GP10021) - ৳100 sent to 01576996800",
+      "targetId": "wth_1793523632814_mung",
+      "timestamp": "2026-11-01T09:21:50.148Z"
+    },
+    {
+      "id": "audit_1793524372150",
+      "adminUsername": "admin",
+      "action": "REJECT_TASK_SUBMISSION",
+      "details": "টাস্ক সাবমিশন বাতিল: সাকিব আল হাসান (GP10021) - কারণ: আপনি আমাদের নীতিমালা লঙ্ঘন করেছেন ",
+      "targetId": "sub_1793524275886_z54v",
+      "timestamp": "2026-11-01T09:12:52.150Z"
+    },
+    {
+      "id": "audit_init",
+      "adminUsername": "system",
+      "action": "SYSTEM_BOOT",
+      "details": "GP Wallet BD প্ল্যাটফর্ম ডাটাবেজ প্রারম্ভিকীকরণ সফল হয়েছে।",
+      "timestamp": "2026-11-01T08:57:40.705Z"
+    }
+  ]
+}

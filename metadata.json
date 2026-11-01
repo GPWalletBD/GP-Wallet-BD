@@ -1,0 +1,7 @@
+{
+  "name": "GP Wallet BD",
+  "description": "GP Wallet BD - বাংলাদেশের বিশ্বস্ত ও আধুনিক অনলাইন টাস্ক আর্নিং প্ল্যাটফর্ম। মোবাইল ও কম্পিউটারে সহজে টাস্ক সম্পন্ন করুন এবং বিকাশ ও নগদে উত্তোলন করুন।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
