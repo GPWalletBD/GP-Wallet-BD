@@ -14,7 +14,8 @@ import {
   type User as FirebaseUser,
 } from 'firebase/auth';
 
-// Firebase configuration
+import { getFirestore } from 'firebase/firestore';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyCn7_IWrP-BxuEsiraIbD4Shuy9BqHyvqI',
   authDomain: 'gp-wallet-bd-d69de.firebaseapp.com',
@@ -34,15 +35,18 @@ export const isFirebaseConfigured = Boolean(
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
+export { app };
+
 export const auth = getAuth(app);
+
+// Firestore Database
+export const db = getFirestore(app);
 
 export const googleProvider = new GoogleAuthProvider();
 
 googleProvider.setCustomParameters({
   prompt: 'select_account',
 });
-
-export { app };
 
 export interface GoogleAuthResult {
   email: string;
@@ -64,7 +68,6 @@ function formatUser(user: FirebaseUser): GoogleAuthResult {
   };
 }
 
-// Sign up with email and password
 export async function registerWithEmail(
   email: string,
   password: string,
@@ -87,7 +90,6 @@ export async function registerWithEmail(
   return formatUser(credential.user);
 }
 
-// Sign in with email and password
 export async function loginWithEmail(
   email: string,
   password: string
@@ -101,18 +103,15 @@ export async function loginWithEmail(
   return formatUser(credential.user);
 }
 
-// Sign in with Google
 export async function loginWithGoogle(): Promise<GoogleAuthResult> {
   const credential = await signInWithPopup(auth, googleProvider);
   return formatUser(credential.user);
 }
 
-// Send password reset email
 export async function sendPasswordReset(email: string): Promise<void> {
   await sendPasswordResetEmail(auth, email.trim());
 }
 
-// Send verification email to the signed-in user
 export async function verifyCurrentEmail(): Promise<void> {
   if (!auth.currentUser) {
     throw new Error('প্রথমে লগইন করুন।');
@@ -121,7 +120,6 @@ export async function verifyCurrentEmail(): Promise<void> {
   await sendEmailVerification(auth.currentUser);
 }
 
-// Sign out
 export async function firebaseSignOut(): Promise<void> {
   await signOut(auth);
-}
+    }
