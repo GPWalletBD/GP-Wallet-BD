@@ -1,46 +1,48 @@
+
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { 
-  getAuth, 
-  GoogleAuthProvider, 
-  signInWithPopup, 
-  sendPasswordResetEmail, 
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   sendEmailVerification,
   signOut,
-  User as FirebaseUser
+  updateProfile,
+  type User as FirebaseUser,
 } from 'firebase/auth';
 
-// Firebase configuration from environment or fallback placeholders
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || '',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || '',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || '',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || ''
+  apiKey: 'AIzaSyCn7_IWrP-BxuEsiraIbD4Shuy9BqHyvqI',
+  authDomain: 'gp-wallet-bd-d69de.firebaseapp.com',
+  projectId: 'gp-wallet-bd-d69de',
+  storageBucket: 'gp-wallet-bd-d69de.firebasestorage.app',
+  messagingSenderId: '190057258492',
+  appId: '1:190057258492:web:be1dd4683f78ba803c6679',
+  measurementId: 'G-0L9BD30HKB',
 };
 
 export const isFirebaseConfigured = Boolean(
-  firebaseConfig.apiKey && 
+  firebaseConfig.apiKey &&
+  firebaseConfig.authDomain &&
   firebaseConfig.projectId &&
-  firebaseConfig.apiKey !== 'YOUR_FIREBASE_API_KEY'
+  firebaseConfig.appId
 );
 
-let app: any = null;
-let auth: any = null;
-let googleProvider: any = null;
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
-try {
-  if (isFirebaseConfigured) {
-    app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-    auth = getAuth(app);
-    googleProvider = new GoogleAuthProvider();
-    googleProvider.setCustomParameters({ prompt: 'select_account' });
-  }
-} catch (error) {
-  console.warn('Firebase initialization warning:', error);
-}
+export const auth = getAuth(app);
 
-export { app, auth, googleProvider };
+export const googleProvider = new GoogleAuthProvider();
+
+googleProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+export { app };
 
 export interface GoogleAuthResult {
   email: string;
@@ -49,60 +51,77 @@ export interface GoogleAuthResult {
   emailVerified: boolean;
 }
 
-/**
- * Trigger Google Sign In popup
- */
-export async function loginWithGoogle(): Promise<GoogleAuthResult> {
-  if (!isFirebaseConfigured || !auth || !googleProvider) {
-    throw new Error('FIREBASE_CONFIG_MISSING');
-  }
-
-  const credential = await signInWithPopup(auth, googleProvider);
-  const fbUser = credential.user;
-
-  if (!fbUser.email) {
-    throw new Error('গুগল অ্যাকাউন্ট থেকে কোনো ইমেইল ঠিকানা পাওয়া যায়নি।');
+function formatUser(user: FirebaseUser): GoogleAuthResult {
+  if (!user.email) {
+    throw new Error('আপনার অ্যাকাউন্টে ইমেইল ঠিকানা পাওয়া যায়নি।');
   }
 
   return {
-    email: fbUser.email,
-    displayName: fbUser.displayName || fbUser.email.split('@')[0],
-    uid: fbUser.uid,
-    emailVerified: fbUser.emailVerified
+    email: user.email,
+    displayName: user.displayName || user.email.split('@')[0],
+    uid: user.uid,
+    emailVerified: user.emailVerified,
   };
 }
 
-/**
- * Send Password Reset Email via Firebase Auth
- */
-export async function sendPasswordReset(email: string): Promise<void> {
-  if (!isFirebaseConfigured || !auth) {
-    throw new Error('FIREBASE_CONFIG_MISSING');
+// Sign up with email and password
+export async function registerWithEmail(
+  email: string,
+  password: string,
+  displayName: string
+): Promise<GoogleAuthResult> {
+  const credential = await createUserWithEmailAndPassword(
+    auth,
+    email.trim(),
+    password
+  );
+
+  if (displayName.trim()) {
+    await updateProfile(credential.user, {
+      displayName: displayName.trim(),
+    });
   }
 
-  await sendPasswordResetEmail(auth, email);
+  await sendEmailVerification(credential.user);
+
+  return formatUser(credential.user);
 }
 
-/**
- * Send Email Verification link to currently signed in Firebase user
- */
+// Sign in with email and password
+export async function loginWithEmail(
+  email: string,
+  password: string
+): Promise<GoogleAuthResult> {
+  const credential = await signInWithEmailAndPassword(
+    auth,
+    email.trim(),
+    password
+  );
+
+  return formatUser(credential.user);
+}
+
+// Sign in with Google
+export async function loginWithGoogle(): Promise<GoogleAuthResult> {
+  const credential = await signInWithPopup(auth, googleProvider);
+  return formatUser(credential.user);
+}
+
+// Send password reset email
+export async function sendPasswordReset(email: string): Promise<void> {
+  await sendPasswordResetEmail(auth, email.trim());
+}
+
+// Send verification email to the signed-in user
 export async function verifyCurrentEmail(): Promise<void> {
-  if (!isFirebaseConfigured || !auth || !auth.currentUser) {
-    throw new Error('FIREBASE_CONFIG_MISSING');
+  if (!auth.currentUser) {
+    throw new Error('প্রথমে লগইন করুন।');
   }
 
   await sendEmailVerification(auth.currentUser);
 }
 
-/**
- * Sign out from Firebase
- */
+// Sign out
 export async function firebaseSignOut(): Promise<void> {
-  if (auth) {
-    try {
-      await signOut(auth);
-    } catch {
-      // ignore
-    }
-  }
+  await signOut(auth);
 }
