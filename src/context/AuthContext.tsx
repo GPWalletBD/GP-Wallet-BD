@@ -1,4 +1,3 @@
-
 import React, {
   createContext,
   useContext,
@@ -12,6 +11,7 @@ import { api } from '../services/api.js';
 
 import {
   auth,
+  db,
   loginWithGoogle,
   loginWithEmail,
   registerWithEmail,
@@ -19,6 +19,12 @@ import {
 } from '../lib/firebase.js';
 
 import { onAuthStateChanged } from 'firebase/auth';
+
+import {
+  doc,
+  getDoc,
+  setDoc
+} from 'firebase/firestore';
 
 export const AUTHORIZED_ADMIN_EMAIL = 'supportteambd@gmail.com';
 
@@ -48,8 +54,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const PROFILE_KEY = 'gp_wallet_user_profile';
-
 function createUser(firebaseUser: any, profile: any = {}): User {
   const email = (firebaseUser.email || '').toLowerCase().trim();
 
@@ -62,16 +66,16 @@ function createUser(firebaseUser: any, profile: any = {}): User {
     mobile: profile.mobile || '',
     email,
     emailVerified: firebaseUser.emailVerified,
-    balance: profile.balance || 0,
-    totalEarnings: profile.totalEarnings || 0,
-    completedTasksCount: profile.completedTasksCount || 0,
-    pendingTasksCount: profile.pendingTasksCount || 0,
+    balance: profile.balance ?? 0,
+    totalEarnings: profile.totalEarnings ?? 0,
+    completedTasksCount: profile.completedTasksCount ?? 0,
+    pendingTasksCount: profile.pendingTasksCount ?? 0,
     referralCode: profile.referralCode || firebaseUser.uid.slice(0, 8).toUpperCase(),
     referredBy: profile.referredBy || '',
-    totalInvited: profile.totalInvited || 0,
-    totalSuccessfulReferrals: profile.totalSuccessfulReferrals || 0,
+    totalInvited: profile.totalInvited ?? 0,
+    totalSuccessfulReferrals: profile.totalSuccessfulReferrals ?? 0,
     role: email === AUTHORIZED_ADMIN_EMAIL ? 'admin' : 'user',
-    status: 'active',
+    status: profile.status || 'active',
     createdAt: profile.createdAt || new Date().toISOString()
   };
 }
@@ -95,6 +99,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     setUnreadCount(0);
   }, []);
 
+  // Load user profile from Firestore
   const refreshUser = useCallback(async () => {
     const currentUser = auth.currentUser;
 
@@ -103,18 +108,32 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       return;
     }
 
-    let profile = {};
+    const userRef = doc(db, 'users', currentUser.uid);
+    const snapshot = await getDoc(userRef);
 
-    try {
-      const saved = localStorage.getItem(PROFILE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.uid === currentUser.uid) {
-          profile = parsed;
-        }
-      }
-    } catch {
-      localStorage.removeItem(PROFILE_KEY);
+    let profile: any;
+
+    if (snapshot.exists()) {
+      profile = snapshot.data();
+    } else {
+      // Create a basic profile for a new Google or existing account
+      profile = {
+        fullName: currentUser.displayName || currentUser.email?.split('@')[0] || 'User',
+        username: currentUser.email?.split('@')[0] || currentUser.uid.slice(0, 8),
+        mobile: '',
+        referralCode: currentUser.uid.slice(0, 8).toUpperCase(),
+        referredBy: '',
+        balance: 0,
+        totalEarnings: 0,
+        completedTasksCount: 0,
+        pendingTasksCount: 0,
+        totalInvited: 0,
+        totalSuccessfulReferrals: 0,
+        status: 'active',
+        createdAt: new Date().toISOString()
+      };
+
+      await setDoc(userRef, profile);
     }
 
     setUser(createUser(currentUser, profile));
@@ -124,13 +143,18 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     refreshSettings();
 
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        await refreshUser();
-      } else {
+      try {
+        if (firebaseUser) {
+          await refreshUser();
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.error('User profile loading failed:', error);
         setUser(null);
+      } finally {
+        setIsLoading(false);
       }
-
-      setIsLoading(false);
     });
 
     return () => unsubscribe();
@@ -153,13 +177,27 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     try {
       const result = await loginWithGoogle();
 
-      const profile = {
-        uid: result.uid,
-        fullName: result.displayName,
-        referralCode: referralCode || ''
-      };
+      const userRef = doc(db, 'users', result.uid);
+      const snapshot = await getDoc(userRef);
 
-      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      if (!snapshot.exists()) {
+        await setDoc(userRef, {
+          fullName: result.displayName,
+          username: result.email.split('@')[0],
+          mobile: '',
+          referralCode: result.uid.slice(0, 8).toUpperCase(),
+          referredBy: referralCode || '',
+          balance: 0,
+          totalEarnings: 0,
+          completedTasksCount: 0,
+          pendingTasksCount: 0,
+          totalInvited: 0,
+          totalSuccessfulReferrals: 0,
+          status: 'active',
+          createdAt: new Date().toISOString()
+        });
+      }
+
       await refreshUser();
     } finally {
       setIsLoading(false);
@@ -188,16 +226,25 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         payload.fullName
       );
 
+      const userRef = doc(db, 'users', result.uid);
+
       const profile = {
-        uid: result.uid,
-        fullName: payload.fullName,
-        username: payload.username,
-        mobile: payload.mobile,
-        referralCode: payload.referralCode || '',
+        fullName: payload.fullName.trim(),
+        username: payload.username.trim(),
+        mobile: payload.mobile.trim(),
+        referralCode: result.uid.slice(0, 8).toUpperCase(),
+        referredBy: payload.referralCode?.trim() || '',
+        balance: 0,
+        totalEarnings: 0,
+        completedTasksCount: 0,
+        pendingTasksCount: 0,
+        totalInvited: 0,
+        totalSuccessfulReferrals: 0,
+        status: 'active',
         createdAt: new Date().toISOString()
       };
 
-      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      await setDoc(userRef, profile);
       await refreshUser();
     } finally {
       setIsLoading(false);
@@ -205,8 +252,10 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   };
 
   const logout = () => {
-    localStorage.removeItem(PROFILE_KEY);
-    firebaseSignOut();
+    firebaseSignOut().catch((error) => {
+      console.error('Logout failed:', error);
+    });
+
     setUser(null);
     setUnreadCount(0);
   };
