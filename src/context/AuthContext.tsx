@@ -1,7 +1,24 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback
+} from 'react';
+
 import { User, WebsiteSettings } from '../types.js';
-import { api, authStorage } from '../services/api.js';
-import { loginWithGoogle, firebaseSignOut } from '../lib/firebase.js';
+import { api } from '../services/api.js';
+
+import {
+  auth,
+  loginWithGoogle,
+  loginWithEmail,
+  registerWithEmail,
+  firebaseSignOut
+} from '../lib/firebase.js';
+
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const AUTHORIZED_ADMIN_EMAIL = 'supportteambd@gmail.com';
 
@@ -15,9 +32,10 @@ interface AuthContextType {
   refreshUser: () => Promise<void>;
   refreshSettings: () => Promise<void>;
   refreshUnreadCount: () => Promise<void>;
-  login: (payload: { username: string; password: string }) => Promise<void>;
+  login: (payload: { email: string; password: string }) => Promise<void>;
   loginWithGoogleAccount: (referralCode?: string) => Promise<void>;
   register: (payload: {
+    email: string;
     fullName: string;
     username: string;
     mobile: string;
@@ -30,81 +48,100 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const PROFILE_KEY = 'gp_wallet_user_profile';
+
+function createUser(firebaseUser: any, profile: any = {}): User {
+  const email = (firebaseUser.email || '').toLowerCase().trim();
+
+  return {
+    id: firebaseUser.uid,
+    userId: firebaseUser.uid,
+    firebaseUid: firebaseUser.uid,
+    fullName: profile.fullName || firebaseUser.displayName || email.split('@')[0],
+    username: profile.username || email.split('@')[0],
+    mobile: profile.mobile || '',
+    email,
+    emailVerified: firebaseUser.emailVerified,
+    balance: profile.balance || 0,
+    totalEarnings: profile.totalEarnings || 0,
+    completedTasksCount: profile.completedTasksCount || 0,
+    pendingTasksCount: profile.pendingTasksCount || 0,
+    referralCode: profile.referralCode || firebaseUser.uid.slice(0, 8).toUpperCase(),
+    referredBy: profile.referredBy || '',
+    totalInvited: profile.totalInvited || 0,
+    totalSuccessfulReferrals: profile.totalSuccessfulReferrals || 0,
+    role: email === AUTHORIZED_ADMIN_EMAIL ? 'admin' : 'user',
+    status: 'active',
+    createdAt: profile.createdAt || new Date().toISOString()
+  };
+}
+
+const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [settings, setSettings] = useState<WebsiteSettings | null>(null);
-  const [unreadCount, setUnreadCount] = useState<number>(0);
+  const [unreadCount, setUnreadCount] = useState(0);
 
   const refreshSettings = useCallback(async () => {
     try {
-      const res = await api.settings.getPublic();
-      setSettings(res.settings);
-    } catch (e) {
-      console.error('Failed to load site settings', e);
+      const result = await api.settings.getPublic();
+      setSettings(result.settings);
+    } catch (error) {
+      console.warn('Settings could not be loaded:', error);
     }
   }, []);
 
   const refreshUnreadCount = useCallback(async () => {
-    try {
-      if (authStorage.getToken()) {
-        const res = await api.notifications.getAll();
-        const unread = res.notifications.filter(n => !n.isRead).length;
-        setUnreadCount(unread);
-      } else {
-        setUnreadCount(0);
-      }
-    } catch {
-      // ignore
-    }
+    setUnreadCount(0);
   }, []);
 
   const refreshUser = useCallback(async () => {
-    const token = authStorage.getToken();
-    if (!token) {
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
       setUser(null);
-      setIsLoading(false);
       return;
     }
 
+    let profile = {};
+
     try {
-      const freshUser = await api.auth.getMe();
-      setUser(freshUser);
-      refreshUnreadCount();
-    } catch (e) {
-      console.warn('Session expired or invalid token', e);
-      authStorage.clear();
-      setUser(null);
-    } finally {
-      setIsLoading(false);
+      const saved = localStorage.getItem(PROFILE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.uid === currentUser.uid) {
+          profile = parsed;
+        }
+      }
+    } catch {
+      localStorage.removeItem(PROFILE_KEY);
     }
-  }, [refreshUnreadCount]);
+
+    setUser(createUser(currentUser, profile));
+  }, []);
 
   useEffect(() => {
-    const token = authStorage.getToken();
-    if (token) {
-      refreshUser();
-    } else {
-      // Auto-load Shakib profile for regular demo user experience if no session
-      api.auth.login({ username: 'shakib75', password: 'password123' })
-        .then(res => {
-          setUser(res.user);
-          setIsLoading(false);
-          refreshUnreadCount();
-        })
-        .catch(() => {
-          setIsLoading(false);
-        });
-    }
     refreshSettings();
-  }, [refreshUser, refreshSettings, refreshUnreadCount]);
 
-  const login = async (payload: { username: string; password: string }) => {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        await refreshUser();
+      } else {
+        setUser(null);
+      }
+
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [refreshSettings, refreshUser]);
+
+  const login = async (payload: { email: string; password: string }) => {
     setIsLoading(true);
+
     try {
-      const res = await api.auth.login(payload);
-      setUser(res.user);
-      await refreshUnreadCount();
+      await loginWithEmail(payload.email, payload.password);
+      await refreshUser();
     } finally {
       setIsLoading(false);
     }
@@ -112,23 +149,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const loginWithGoogleAccount = async (referralCode?: string) => {
     setIsLoading(true);
+
     try {
-      const googleData = await loginWithGoogle();
-      const res = await api.auth.firebaseLogin({
-        email: googleData.email,
-        displayName: googleData.displayName,
-        firebaseUid: googleData.uid,
-        emailVerified: googleData.emailVerified,
-        referralCode
-      });
-      setUser(res.user);
-      await refreshUnreadCount();
+      const result = await loginWithGoogle();
+
+      const profile = {
+        uid: result.uid,
+        fullName: result.displayName,
+        referralCode: referralCode || ''
+      };
+
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      await refreshUser();
     } finally {
       setIsLoading(false);
     }
   };
 
   const register = async (payload: {
+    email: string;
     fullName: string;
     username: string;
     mobile: string;
@@ -136,29 +175,47 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     confirmPassword: string;
     referralCode?: string;
   }) => {
+    if (payload.password !== payload.confirmPassword) {
+      throw new Error('পাসওয়ার্ড দুটি মিলছে না।');
+    }
+
     setIsLoading(true);
+
     try {
-      const res = await api.auth.register(payload);
-      setUser(res.user);
-      await refreshUnreadCount();
+      const result = await registerWithEmail(
+        payload.email,
+        payload.password,
+        payload.fullName
+      );
+
+      const profile = {
+        uid: result.uid,
+        fullName: payload.fullName,
+        username: payload.username,
+        mobile: payload.mobile,
+        referralCode: payload.referralCode || '',
+        createdAt: new Date().toISOString()
+      };
+
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      await refreshUser();
     } finally {
       setIsLoading(false);
     }
   };
 
   const logout = () => {
-    api.auth.logout();
+    localStorage.removeItem(PROFILE_KEY);
     firebaseSignOut();
     setUser(null);
     setUnreadCount(0);
   };
 
-  // Strictly check that user is admin AND has the authorized email
-  const isAuthenticated = !!user;
+  const isAuthenticated = Boolean(user);
+
   const isAdmin = Boolean(
-    user && 
-    user.role === 'admin' && 
-    (user.email || '').toLowerCase().trim() === AUTHORIZED_ADMIN_EMAIL
+    user &&
+    user.email?.toLowerCase().trim() === AUTHORIZED_ADMIN_EMAIL
   );
 
   return (
@@ -184,10 +241,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 };
 
+export { AuthProvider };
+
 export const useAuth = () => {
   const context = useContext(AuthContext);
+
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
+
   return context;
 };
